@@ -2,9 +2,6 @@ package com.namnh.nfchelper.data
 
 import android.content.SharedPreferences
 
-/**
- * Created by minhb on 08/10/2019.
- */
 interface SharedPrefApi{
     fun <T> put(key: String, data: T)
     fun <T> get(key: String, type: Class<T>, default: T? = null): T

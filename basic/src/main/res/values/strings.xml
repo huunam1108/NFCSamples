@@ -5,4 +5,5 @@
     <string name="card_reader">Card Reader</string>
     <string name="tag_writer">Tag Writer</string>
     <string name="tag_reader">Tag Reader</string>
+    <string name="content">Content</string>
 </resources>
