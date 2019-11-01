@@ -1,2 +1,2 @@
-include ':app'
+include ':cardemulation', ':basic', ':helper'
 rootProject.name='NFCSamples'

@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">NFCBasic</string>
+    <string name="input_your_text">Input your text!</string>
+    <string name="write_to_nfc_tag">Write to NFC tag</string>
+    <string name="card_reader">Card Reader</string>
+    <string name="tag_writer">Tag Writer</string>
+    <string name="tag_reader">Tag Reader</string>
+</resources>

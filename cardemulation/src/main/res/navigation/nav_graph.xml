@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/splash_fragment">
+    <fragment
+        android:id="@+id/splash_fragment"
+        android:name="com.namnh.nfccardemulation.ui.splash.SplashFragment"
+        android:label="SplashFragment"
+        tools:layout="@layout/fragment_splash">
+        <action
+            android:id="@+id/action_splash_fragment_to_login_fragment"
+            app:destination="@id/login_fragment"
+            app:popUpTo="@id/splash_fragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_splash_fragment_to_nfc_card_emulation_fragment"
+            app:destination="@id/nfc_card_emulation_fragment"
+            app:popUpTo="@id/splash_fragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/login_fragment"
+        android:name="com.namnh.nfccardemulation.ui.login.LoginFragment"
+        android:label="LoginFragment"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_login_fragment_to_nfc_card_emulation_fragment"
+            app:destination="@id/nfc_card_emulation_fragment"
+            app:popUpTo="@id/login_fragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/nfc_card_emulation_fragment"
+        android:name="com.namnh.nfccardemulation.ui.cardemulation.CardEmulationFragment"
+        android:label="CardEmulationFragment"
+        tools:layout="@layout/fragment_card_emulation" />
+    <fragment
+        android:id="@+id/settings_fragment"
+        android:name="com.namnh.nfccardemulation.ui.settings.SettingsFragment"
+        android:label="SettingsFragment"
+        tools:layout="@layout/fragment_settings" />
+
+</navigation>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/nav_splash">
+    <fragment
+        android:id="@+id/nav_splash"
+        android:name="com.namnh.nfcbasic.ui.splash.SplashFragment"
+        android:label="SplashFragment"
+        tools:layout="@layout/fragment_splash">
+        <action
+            android:id="@+id/action_splashFragment_to_cardReaderFragment"
+            app:destination="@id/nav_card_reader"
+            app:popUpTo="@id/nav_splash"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_card_reader"
+        android:name="com.namnh.nfcbasic.ui.cardreader.CardReaderFragment"
+        android:label="CardReaderFragment"
+        tools:layout="@layout/fragment_card_reader" />
+    <fragment
+        android:id="@+id/nav_write_tag"
+        android:name="com.namnh.nfcbasic.ui.tag.write.NfcWriteTagFragment"
+        android:label="NfcWriteTagFragment"
+        tools:layout="@layout/fragment_write_tag" />
+    <fragment
+        android:id="@+id/nav_read_tag"
+        android:name="com.namnh.nfcbasic.ui.tag.read.NfcReadTagFragment"
+        android:label="NfcReadTagFragment"
+        tools:layout="@layout/fragment_read_tag" />
+</navigation>

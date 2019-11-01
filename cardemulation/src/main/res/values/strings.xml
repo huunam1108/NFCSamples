@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">NFCCardEmulation</string>
+    <string name="client_id">348406883904-omjcu1tk23jpc4annrg93o1bt2uj9nrd.apps.googleusercontent.com</string>
+    <string name="card_emulation">NFC Card Emulation</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="settings">Settings</string>
+    <string name="simulating_nfc_card">Simulating NFC card …</string>
+</resources>
