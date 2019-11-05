@@ -72,7 +72,9 @@ class LoginFragment : Fragment() {
             } else {
                 // save account & move to Home Fragment
                 sharedPref.put(SharedPrefKey.ACCOUNT, account.email)
-                findNavController().navigate(R.id.action_login_fragment_to_nfc_card_emulation_fragment)
+                val action = LoginFragmentDirections.actionLoginFragmentToNfcCardEmulationFragment()
+                    .setAccount(account.email)
+                findNavController().navigate(action)
             }
         } catch (e: ApiException) {
             // The ApiException status code indicates the detailed failure reason.

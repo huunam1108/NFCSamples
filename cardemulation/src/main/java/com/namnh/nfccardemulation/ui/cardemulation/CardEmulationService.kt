@@ -7,6 +7,7 @@ import android.widget.Toast
 import com.namnh.nfchelper.Constants.SAMPLE_LOYALTY_CARD_AID
 import com.namnh.nfchelper.Constants.SELECT_OK_SW
 import com.namnh.nfchelper.Constants.UNKNOWN_CMD_SW
+import com.namnh.nfchelper.Utils
 import com.namnh.nfchelper.Utils.buildSelectApdu
 import com.namnh.nfchelper.Utils.concatArrays
 import com.namnh.nfchelper.data.SharedPrefApi
@@ -49,8 +50,7 @@ class CardEmulationService : HostApduService() {
      */
     override fun processCommandApdu(commandApdu: ByteArray?, extras: Bundle?): ByteArray {
         if (commandApdu == null || commandApdu.isEmpty()) return UNKNOWN_CMD_SW
-        Log.i(TAG, "Received APDU: " + com.namnh.nfchelper.Utils.byteArrayToHexString(commandApdu))
-
+        Log.i(TAG, "Received APDU: " + Utils.byteArrayToHexString(commandApdu))
         // If the APDU matches the SELECT AID command for this service,
         // send the loyalty card account number, followed by a SELECT_OK status trailer (0x9000).
         val selectApdu = buildSelectApdu(SAMPLE_LOYALTY_CARD_AID)

@@ -34,9 +34,7 @@ class MainActivity : AppCompatActivity() {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         val appBarConfiguration = AppBarConfiguration(
-            setOf(
-                R.id.nfc_card_emulation_fragment, R.id.settings_fragment
-            )
+            setOf(R.id.nfc_card_emulation_fragment, R.id.settings_fragment)
         )
         navController?.apply {
             addOnDestinationChangedListener { _, destination, _ ->

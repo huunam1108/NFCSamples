@@ -1,7 +1,5 @@
 package com.namnh.nfchelper
 
-import kotlin.experimental.and
-
 object Utils {
 
     /**
@@ -13,12 +11,8 @@ object Utils {
      */
     fun buildSelectApdu(aid: String): ByteArray {
         // Format: [CLASS | INSTRUCTION | PARAMETER 1 | PARAMETER 2 | LENGTH | DATA]
-        return hexStringToByteArray(
-            Constants.SELECT_APDU_HEADER + String.format(
-                "%02X",
-                aid.length / 2
-            ) + aid
-        )
+        val data = Constants.SELECT_APDU_HEADER + String.format("%02X", aid.length / 2) + aid
+        return hexStringToByteArray(data)
     }
 
     /**
@@ -31,9 +25,6 @@ object Utils {
      */
     fun hexStringToByteArray(str: String): ByteArray {
         val len = str.length
-        if (len % 2 == 1) {
-            throw IllegalArgumentException("Hex string must have even number of characters")
-        }
         val data = ByteArray(len / 2) // Allocate 1 byte per 2 hex characters
         var i = 0
         while (i < len) {
@@ -59,7 +50,7 @@ object Utils {
         val hexChars = CharArray(bytes.size * 2)
         var v: Int
         for (j in bytes.indices) {
-            v = (bytes[j] and 0xFF.toByte()).toInt()
+            v = bytes[j].toInt() and 0xFF
             hexChars[j * 2] = hexArray[v.ushr(4)]
             hexChars[j * 2 + 1] = hexArray[v and 0x0F]
         }

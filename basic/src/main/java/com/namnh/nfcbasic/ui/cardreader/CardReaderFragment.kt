@@ -43,6 +43,9 @@ class CardReaderFragment : BaseNfcFragment(), LoyaltyCardReader.AccountCallback 
     }
 
     companion object {
+        // Recommend NfcAdapter flags for reading from other Android devices. Indicates that this
+        // activity is interested in NFC-A devices (including other Android devices), and that the
+        // system should not check for the presence of NDEF-formatted data (e.g. Android Beam).
         private const val CARD_READER_FLAGS =
             NfcAdapter.FLAG_READER_NFC_A or NfcAdapter.FLAG_READER_SKIP_NDEF_CHECK
     }
